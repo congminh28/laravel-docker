@@ -49,6 +49,7 @@ jobs:
             - node_modules
 
       # prepare the database
+      - run: php artisan key:generate --env=testing
       - run: php artisan migrate --seed --env=testing
 
       # run tests with phpunit or codecept
